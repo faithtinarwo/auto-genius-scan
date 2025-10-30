@@ -9,36 +9,26 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img 
-          src={heroBackground} 
-          alt="Professional car diagnostics" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/85 to-primary/90" />
-      </div>
-      
+    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
       {/* Content */}
       <div className="container relative z-20 px-4 py-20 animate-fade-in pointer-events-auto">
-        <div className="flex flex-col items-center text-center space-y-8">
+        <div className="flex flex-col items-start text-left space-y-8 max-w-4xl">
           {/* Logo */}
           <div className="w-48 md:w-64 animate-scale-in">
             <img 
               src={logo} 
               alt="ZCE Motors - Professional Car Diagnostics" 
-              className="w-full h-auto drop-shadow-2xl"
+              className="w-full h-auto"
             />
           </div>
           
           {/* Headline */}
-          <div className="space-y-4 max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-black text-primary-foreground leading-tight tracking-tight">
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-7xl font-black text-secondary leading-tight tracking-tight">
               CAR DIAGNOSTICS
               <span className="block text-primary mt-2">SERVICE</span>
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium">
+            <p className="text-xl md:text-2xl text-foreground font-medium">
               Get back on the road, worry-free
             </p>
           </div>
@@ -61,7 +51,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               asChild
-              className="bg-primary-foreground/10 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary text-lg px-8 py-6 rounded-full font-bold backdrop-blur-sm hover:scale-105 transition-all active:scale-95 pointer-events-auto"
+              className="border-2 border-secondary bg-background hover:bg-secondary hover:text-secondary-foreground text-secondary text-lg px-8 py-6 rounded-full font-bold hover:scale-105 transition-all active:scale-95 pointer-events-auto"
             >
               <a href="tel:+263780567523" className="flex items-center justify-center pointer-events-auto">
                 <Phone className="mr-2 h-5 w-5" />
@@ -72,8 +62,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+      {/* Decorative red accent */}
+      <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-primary/10 to-transparent -z-10 pointer-events-none" />
     </section>
   );
 };
