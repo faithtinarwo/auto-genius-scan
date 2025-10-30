@@ -12,7 +12,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
       {/* Content */}
       <div className="container relative z-20 px-4 py-20 animate-fade-in pointer-events-auto">
-        <div className="flex flex-col items-start text-left space-y-8 max-w-4xl">
+        <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
           {/* Logo */}
           <div className="w-48 md:w-64 animate-scale-in">
             <img 
