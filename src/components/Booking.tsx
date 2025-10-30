@@ -60,15 +60,20 @@ const Booking = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
               
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-foreground">Phone</p>
-                    <a href="tel:+263780567523" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a 
+                      href="tel:+263780567523" 
+                      className="text-muted-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-primary cursor-pointer block"
+                    >
                       +263 78 056 7523
                     </a>
-                    <br />
-                    <a href="tel:+263772123789" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a 
+                      href="tel:+263772123789" 
+                      className="text-muted-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-primary cursor-pointer block"
+                    >
                       077 212 3789
                     </a>
                   </div>
@@ -78,7 +83,10 @@ const Booking = () => {
                   <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-foreground">Email</p>
-                    <a href="mailto:Josephtishashe@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a 
+                      href="mailto:Josephtishashe@gmail.com" 
+                      className="text-muted-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-primary cursor-pointer break-all"
+                    >
                       Josephtishashe@gmail.com
                     </a>
                   </div>
@@ -105,10 +113,10 @@ const Booking = () => {
               <div className="pt-6 border-t border-border">
                 <Button 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold cursor-pointer hover:scale-105 transition-all active:scale-95"
                   asChild
                 >
-                  <a href="tel:+263780567523">
+                  <a href="tel:+263780567523" className="flex items-center justify-center">
                     <Phone className="mr-2 h-5 w-5" />
                     CALL NOW
                   </a>
@@ -200,7 +208,7 @@ const Booking = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold cursor-pointer hover:scale-105 transition-all active:scale-95"
                 >
                   <Calendar className="mr-2 h-5 w-5" />
                   BOOK APPOINTMENT

@@ -53,7 +53,7 @@ const Hero = () => {
             <Button 
               size="lg"
               onClick={scrollToBooking}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full font-bold shadow-[var(--shadow-glow)] hover:scale-105 transition-all"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full font-bold shadow-[var(--shadow-glow)] hover:scale-105 transition-all cursor-pointer active:scale-95"
             >
               BOOK NOW
             </Button>
@@ -61,9 +61,9 @@ const Hero = () => {
               size="lg"
               variant="outline"
               asChild
-              className="bg-primary-foreground/10 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary text-lg px-8 py-6 rounded-full font-bold backdrop-blur-sm"
+              className="bg-primary-foreground/10 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary text-lg px-8 py-6 rounded-full font-bold backdrop-blur-sm hover:scale-105 transition-all active:scale-95"
             >
-              <a href="tel:+263780567523">
+              <a href="tel:+263780567523" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 CALL US
               </a>

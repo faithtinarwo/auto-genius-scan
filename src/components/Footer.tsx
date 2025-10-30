@@ -22,25 +22,34 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 text-primary">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+263780567523" className="hover:text-primary transition-colors">
+                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <a 
+                  href="tel:+263780567523" 
+                  className="hover:text-primary transition-colors cursor-pointer underline decoration-transparent hover:decoration-primary"
+                >
                   +263 78 056 7523
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+263772123789" className="hover:text-primary transition-colors">
+                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <a 
+                  href="tel:+263772123789" 
+                  className="hover:text-primary transition-colors cursor-pointer underline decoration-transparent hover:decoration-primary"
+                >
                   077 212 3789
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:Josephtishashe@gmail.com" className="hover:text-primary transition-colors">
+                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
+                <a 
+                  href="mailto:Josephtishashe@gmail.com" 
+                  className="hover:text-primary transition-colors cursor-pointer underline decoration-transparent hover:decoration-primary break-all"
+                >
                   Josephtishashe@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-accent" />
+                <MapPin className="h-4 w-4 text-accent flex-shrink-0" />
                 <span>Harare, Zimbabwe</span>
               </div>
             </div>
