@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar, Clock, Car, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Booking = () => {
   const { toast } = useToast();
@@ -18,22 +19,43 @@ const Booking = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to a backend
-    toast({
-      title: "Booking Request Sent!",
-      description: "We'll contact you shortly to confirm your appointment.",
-    });
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      vehicle: "",
-      service: "",
-      date: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-booking-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Booking Request Sent!",
+        description: "We'll contact you shortly to confirm your appointment.",
+      });
+      
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        vehicle: "",
+        service: "",
+        date: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending booking:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send booking request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -208,10 +230,11 @@ const Booking = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold cursor-pointer hover:scale-105 transition-all active:scale-95"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold cursor-pointer hover:scale-105 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Calendar className="mr-2 h-5 w-5" />
-                  BOOK APPOINTMENT
+                  {isSubmitting ? "SENDING..." : "BOOK APPOINTMENT"}
                 </Button>
               </form>
             </Card>
