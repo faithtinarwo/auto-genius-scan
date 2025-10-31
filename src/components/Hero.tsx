@@ -24,7 +24,7 @@ const Hero = () => {
           
           {/* Headline */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-black text-secondary leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-secondary dark:text-white leading-tight tracking-tight">
               CAR DIAGNOSTICS
               <span className="block text-primary mt-2">SERVICE</span>
             </h1>
